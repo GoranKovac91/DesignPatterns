@@ -6,7 +6,17 @@ namespace FactoryPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            LoanFactory factory = null;
+            Console.WriteLine("Select type of loan");
+            string userString = Console.ReadLine();
+            switch (userString.ToLower())
+            {
+                case "bussines":
+                    
+                    factory = new BussinesLoanFactory(BussinesLoanFactory.SetAmmount(), 20);
+
+                    break;
+            }
         }
     }
 }

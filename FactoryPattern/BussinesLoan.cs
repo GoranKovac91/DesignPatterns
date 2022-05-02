@@ -7,6 +7,8 @@ namespace FactoryPattern
         private float _ammount;
         private float _repaymentPeriod;
         private readonly float _interestRate;
+        private readonly float _maxAmmount=1000000;
+        private readonly float _maxRepaymentPeriod = 10;
         public BussinesLoan(float ammount, float repaymentPeriod)
         {
             _loanType = "Housing loan";
@@ -25,9 +27,9 @@ namespace FactoryPattern
             set
             {
                 _ammount = value;
-                if (Ammount>1000000)
+                if (Ammount>_maxAmmount)
                 {
-                    _ammount = 1000000;
+                    _ammount = _maxAmmount;
                     Console.WriteLine("Maximmum ammount is 1000000 ");
                 }
             }
@@ -40,7 +42,14 @@ namespace FactoryPattern
         protected override float RepaymentPeriod
         {
             get { return _repaymentPeriod; }
-            set { _repaymentPeriod = value; }
+            set
+            {
+                _repaymentPeriod = value;
+                if (value>_maxRepaymentPeriod)
+                {
+                    value = _maxRepaymentPeriod;
+                }
+            }
         }
     }
 }

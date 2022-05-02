@@ -9,6 +9,7 @@ namespace FactoryPattern
         private float _repaymentPeriod;
         private readonly float _interestRate;
         private readonly float _maxRepaymentPeriod=5;
+        private readonly float _maxAmmount = 100000;
         public StudentLoan (float ammount,float repaymentPeriod)
         {
             _loanType = "Student Loan";
@@ -27,9 +28,9 @@ namespace FactoryPattern
             set
             {
                 _ammount = value;
-                if (value > 100000)
+                if (value > _maxAmmount)
                 {
-                    value = 100000;
+                    value = _maxAmmount;
                     Console.Write("Maximmum ammount is 100000");
                 }
             }

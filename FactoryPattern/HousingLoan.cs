@@ -8,6 +8,7 @@ namespace FactoryPattern
         private float _repaymentPeriod;
         private readonly float _interestRate;
         private readonly float _maxRepaymentPeriod=30;
+        private readonly float _maxAmmount=500000;
         public HousingLoan(float ammount, float repaymentPeriod)
         {
             _loanType = "Housing loan";
@@ -26,9 +27,9 @@ namespace FactoryPattern
             set
             {
                 _ammount = value;
-                if (value > 500000)
+                if (value > _maxAmmount)
                 {
-                    value = 500000;
+                    value = _maxAmmount;
                     Console.Write("Maximmum ammount is 500000");
                 }
             }
@@ -45,9 +46,9 @@ namespace FactoryPattern
             set
             {
                 _repaymentPeriod = value;
-                if (value > 30)
+                if (value > _maxRepaymentPeriod)
                 {
-                    value = 30;
+                    value = _maxRepaymentPeriod;
                     Console.Write("Maximmum repayment period is 30 years");
                 }
             }
