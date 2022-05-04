@@ -10,7 +10,7 @@ namespace FactoryPattern
             this._ammount = ammount;
             this._repaymentPeriod = RepaymentPeriod;
         }
-        protected override Loan GetLoanType()
+        public override Loan GetLoanType()
         {
             return new StudentLoan(_ammount, _repaymentPeriod);
         }

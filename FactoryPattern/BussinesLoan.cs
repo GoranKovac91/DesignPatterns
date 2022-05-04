@@ -16,12 +16,12 @@ namespace FactoryPattern
             this._repaymentPeriod = repaymentPeriod;
             _interestRate =1.22f;
         }
-        protected override string LoanType
+        public override string LoanType
         {
             get { return _loanType; }
         }
 
-        protected override float Ammount
+        public override float Ammount
         {
             get { return _ammount; }
             set
@@ -35,11 +35,11 @@ namespace FactoryPattern
             }
         }
 
-        protected override float InterestRate
+        public override float InterestRate
         {
             get { return _interestRate; }
         }
-        protected override float RepaymentPeriod
+        public override float RepaymentPeriod
         {
             get { return _repaymentPeriod; }
             set

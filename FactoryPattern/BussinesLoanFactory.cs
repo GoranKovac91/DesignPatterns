@@ -11,23 +11,11 @@ namespace FactoryPattern
             this._repaymentPeriod = RepaymentPeriod;
         }
 
-        protected override Loan GetLoanType()
+        public override Loan GetLoanType()
         {
            return new BussinesLoan(_ammount,_repaymentPeriod);
         }
-        public static float SetAmmount()
-        {
-            float userInput;
-            string userString = Console.ReadLine();
-            if (float.TryParse(userString,out userInput))
-            {
-                return userInput;
-            }
-            else
-            {
-                return 0;
-            }
-        }
+      
     }
 }
 

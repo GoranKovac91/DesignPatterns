@@ -3,10 +3,10 @@ namespace FactoryPattern
 {
 	public abstract class Loan
 	{
-		protected abstract string LoanType { get; }
-		protected abstract float Ammount { get; set; }
-		protected abstract float InterestRate { get;  }
-		protected abstract float RepaymentPeriod { get; set; }
+		public abstract string LoanType { get; }
+		public abstract float Ammount { get; set; }
+		public abstract float InterestRate { get;  }
+		public abstract float RepaymentPeriod { get; set; }
 	}
 
 }
